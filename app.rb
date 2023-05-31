@@ -10,8 +10,35 @@ class Application < Sinatra::Base
   get '/' do
     return "Hello Heather"
   end
-end
 
+  get '/name' do
+    name = params[:name]
+    return name
+  end
+
+  get '/names' do
+    name1 = params[:name1]
+    name2 = params[:name2]
+    name3 = params[:name3]
+    
+    return "#{name1}, #{name2}, #{name3}"
+  end
+
+  post '/hello' do
+  return "hello"
+  end 
+
+  post '/sort-names' do 
+    names =params[:names]
+    # convert a string to an array 
+    names = names.split(",")
+    # sort names, using sort method 
+    sorted_names = names.sort 
+    # convert sorted names to a string 
+    return sorted_names.join(",")
+  end
+
+end
 
 
   # This allows the app code to refresh
