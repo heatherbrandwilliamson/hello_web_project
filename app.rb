@@ -11,6 +11,10 @@ class Application < Sinatra::Base
     return "Hello Heather"
   end
 
+  get '/hello' do
+    return erb(:index)
+  end
+
   get '/name' do
     name = params[:name]
     return name

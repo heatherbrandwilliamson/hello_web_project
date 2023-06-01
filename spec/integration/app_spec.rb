@@ -55,6 +55,28 @@ describe Application do
         end 
      end 
 
+     context "POST to /hello" do 
+      it 'returns 200 OK' do 
+          response = post('/hello')
+          expect(response.status).to eq(200)
+          expect(response.body).to eq("hello")
+      end 
+   end 
+
+   context "GET to /hello" do 
+    it 'returns 200 OK' do 
+        response = get('/hello')
+        expect(response.status).to eq(200)
+    end 
+ end 
+
+
+  context "GET to /hello" do 
+    it "returns a h1 title" do 
+      expect(response.body).to include('<h1>Hello!</h1>')
+    end 
+  end 
+
     #  context "Post to /sort-names" do
     #     it 'returns 200 Ok and returns the names sorted' do
     #      response = post('/sort-names', names: "Alice")
